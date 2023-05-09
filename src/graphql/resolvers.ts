@@ -1,3 +1,5 @@
+import { Customer } from '../lib/data.ts';
+
 export const customerQueryResolver = () => {
-  return null;
+  return new Customer().getAdaptor().read();
 };

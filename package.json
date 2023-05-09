@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@apollo/server": "^4.7.1",
+    "dotenv": "^16.0.3",
+    "fast-csv": "^4.3.6",
     "graphql": "^16.6.0"
   },
   "type": "module"

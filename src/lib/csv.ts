@@ -11,25 +11,24 @@ export class CSVAdaptor extends DataAdaptor {
   read = async () => {
     switch (this.dataType) {
       case DataType.Customer:
-        return await parseCustomerCSV();
+        return await this.parseCustomerCSV();
     }
   };
+
+  parseCustomerCSV = () => {
+    return new Promise<CustomerData[]>((resolve, reject) => {
+      const results: CustomerData[] = [];
+      createReadStream(path.resolve(process.cwd(), 'data', 'customer.csv'))
+        .pipe(csv.parse({ headers: true }))
+        .on('error', (error) => reject(error))
+        .on('data', (row) => {
+          results.push(this.rowToCustomerData(row));
+        })
+        .on('end', () => resolve(results));
+    });
+  };
+
+  rowToCustomerData = (row) => {
+    return new CustomerData(row.email, row.forename, row.surname, row.contact_number, row.postcode);
+  };
 }
-
-const parseCustomerCSV = () => {
-  return new Promise<CustomerData[]>((resolve, reject) => {
-    const results: CustomerData[] = [];
-    createReadStream(path.resolve(process.cwd(), 'data', 'customer.csv'))
-      .pipe(csv.parse({ headers: true }))
-      .on('error', (error) => reject(error))
-      .on('data', (row) => {
-        console.log(row);
-        results.push(rowToCustomerData(row));
-      })
-      .on('end', () => resolve(results));
-  });
-};
-
-const rowToCustomerData = (row) => {
-  return new CustomerData(row.email, row.forename, row.surname, row.contact_number, row.postcode);
-};

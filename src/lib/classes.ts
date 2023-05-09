@@ -15,9 +15,23 @@ export class CustomerData {
   }
 }
 
+export class ProductData {
+  vin: string;
+  colour: string;
+  make: string;
+  model: string;
+  price: number;
+  constructor(vin, colour, make, model, price) {
+    this.vin = vin;
+    this.colour = colour;
+    this.make = make;
+    this.model = model;
+    this.price = price;
+  }
+}
+
 export class DataAdaptor {
   dataType: DataType;
-  read: (args?: CustomerArgs) => Promise<CustomerData[]>;
   constructor(type: DataType) {
     this.dataType = type;
   }

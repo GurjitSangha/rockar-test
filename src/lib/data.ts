@@ -15,3 +15,7 @@ class DataObject {
 export class Customer extends DataObject {
   type = DataType.Customer;
 }
+
+export class Product extends DataObject {
+  type = DataType.Product;
+}

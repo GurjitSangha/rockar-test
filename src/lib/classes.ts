@@ -1,4 +1,4 @@
-import { CustomerArgs, DataType } from './types.ts';
+import { DataType } from './types.ts';
 
 export class CustomerData {
   email: string;

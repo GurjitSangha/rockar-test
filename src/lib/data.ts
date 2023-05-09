@@ -1,4 +1,5 @@
 import { CSVAdaptor } from './csv.ts';
+import { DBAdaptor } from './db.ts';
 import { DataType } from './types.ts';
 
 class DataObject {
@@ -8,6 +9,8 @@ class DataObject {
     switch (process.env.DATA_SOURCE) {
       case 'csv':
         return new CSVAdaptor(this.type);
+      case 'db':
+        return new DBAdaptor(this.type);
     }
   };
 }

@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "rootDirs": ["src"],
     "outDir": "dist",
     "lib": ["es2020"],

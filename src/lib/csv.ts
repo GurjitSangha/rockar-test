@@ -31,5 +31,5 @@ const parseCustomerCSV = () => {
 };
 
 const rowToCustomerData = (row) => {
-  return new CustomerData(row.email, row.forename, row.surname, row.contactNumber, row.postcode);
+  return new CustomerData(row.email, row.forename, row.surname, row.contact_number, row.postcode);
 };

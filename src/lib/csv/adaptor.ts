@@ -3,6 +3,8 @@ import { DataReader, DataType } from '../types';
 import CustomerCSVReader from './customer';
 import { ProductCSVReader } from './product';
 
+// CSV Data adaptor
+// Instantiates it's own reader based on the data type it was created with
 export class CSVAdaptor extends DataAdaptor {
   constructor(type: DataType, reader?: DataReader<any, any>) {
     super(type, reader);

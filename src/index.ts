@@ -7,6 +7,7 @@ import { customerQueryResolver, productQueryResolver } from './graphql/resolvers
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+// Define the graphql typedefs, resolvers and server
 const typeDefs = schema;
 const resolvers = {
   Query: {
@@ -14,12 +15,12 @@ const resolvers = {
     product: productQueryResolver,
   },
 };
-
 const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
 
+// Start the server
 const { url } = await startStandaloneServer(server, {
   listen: { port: 4000 },
 });

@@ -1,8 +1,11 @@
 import { DataAdaptor } from './classes.ts';
 import { CSVAdaptor } from './csv/adaptor.ts';
-import { DBAdaptor } from './db.ts';
+import { DBAdaptor } from './db/adaptor.ts';
 import { DataType } from './types.ts';
 
+// Generic data object for customers and products
+// Instatiates it's own adaptor depending on the env mode
+// Exposes a single read function for consumers
 class DataObject {
   type: DataType;
   adaptor: DataAdaptor;

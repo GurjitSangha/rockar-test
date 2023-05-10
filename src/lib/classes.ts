@@ -1,4 +1,4 @@
-import { DataType } from './types.ts';
+import { DataReader, DataType } from './types.ts';
 
 export class CustomerData {
   email: string;
@@ -32,7 +32,11 @@ export class ProductData {
 
 export class DataAdaptor {
   dataType: DataType;
-  constructor(type: DataType) {
+  reader: DataReader<any, any>;
+  constructor(type: DataType, reader?: DataReader<any, any>) {
     this.dataType = type;
+    this.reader = reader;
   }
+
+  read: (args) => Promise<any>;
 }

@@ -3,6 +3,10 @@ export enum DataType {
   Product = 'product',
 }
 
+export interface DataReader<Args, Data> {
+  read(args: Args): Promise<Data[]>;
+}
+
 export type CustomerArgs = {
   email?: string;
   forename?: string;

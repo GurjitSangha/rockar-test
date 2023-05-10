@@ -1,5 +1,5 @@
-import { ProductData } from '../classes';
-import { DataReader, ProductArgs } from '../types';
+import { ProductData } from '../classes.ts';
+import { DataReader, ProductArgs } from '../types.ts';
 import { prisma } from '../../../db/client.ts';
 
 export class ProductDBReader implements DataReader<ProductArgs, ProductData> {

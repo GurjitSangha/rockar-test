@@ -1,6 +1,6 @@
 import { createReadStream } from 'fs';
-import { CustomerData } from '../classes';
-import { CustomerArgs, CustomerRow, DataReader } from '../types';
+import { CustomerData } from '../classes.ts';
+import { CustomerArgs, CustomerRow, DataReader } from '../types.ts';
 import path from 'path';
 import * as csv from 'fast-csv';
 

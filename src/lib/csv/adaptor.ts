@@ -1,7 +1,7 @@
-import { DataAdaptor } from '../classes';
-import { DataReader, DataType } from '../types';
-import CustomerCSVReader from './customer';
-import { ProductCSVReader } from './product';
+import { DataAdaptor } from '../classes.ts';
+import { DataReader, DataType } from '../types.ts';
+import CustomerCSVReader from './customer.ts';
+import { ProductCSVReader } from './product.ts';
 
 // CSV Data adaptor
 // Instantiates it's own reader based on the data type it was created with

@@ -1,7 +1,7 @@
-import { DataAdaptor } from '../classes';
-import { DataType } from '../types';
-import { CustomerDBReader } from './customer';
-import { ProductDBReader } from './product';
+import { DataAdaptor } from '../classes.ts';
+import { DataType } from '../types.ts';
+import { CustomerDBReader } from './customer.ts';
+import { ProductDBReader } from './product.ts';
 
 // DB Data adaptor
 // Instantiates it's own reader based on the data object type
